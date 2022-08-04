@@ -2,10 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import { Image, ScrollView, StyleSheet, Text, View, TextInput, SafeAreaView,Button} from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
-import { Header } from 'react-native-elements';
 import ImgX from '../assets/img4k.png';
-
-
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer, DrawerActions } from '@react-navigation/native';
 
@@ -13,7 +10,6 @@ export default function Feedback(navigation) {
   const [text, onChangeText] = React.useState("");
 
   return (
-
     <View>
       {/* <Image source={require('../assets/img-me.png')}  /> */}
       <View style={styles.viewText}>

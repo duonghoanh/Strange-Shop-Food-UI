@@ -8,7 +8,7 @@ import DrawerContent from '../navi/drawerContent';
 import Feedback from '../Screen/Feedback';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Cart from '../Screen/Cart';
-import sign from '../Screen/Sign';
+import sign from '../Screen/SignUp';
 const Drawer = createDrawerNavigator();
 export default function Drawern() {
   return (

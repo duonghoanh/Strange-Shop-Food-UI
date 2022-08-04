@@ -4,6 +4,7 @@ import { Image, ScrollView, StyleSheet,
    Text, View, TextInput, 
    SafeAreaView, Button,
   Alert } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 export default function Profile() {
@@ -41,23 +42,21 @@ Alert.alert(
         <Image source={require('../assets/img-me.png')} />
       </View> */}
       <View style={{alignItems: 'center'}}>
-      <Image source={require('../assets/img-me.png')} 
+      <Image source={require('../assets/lock.png')} 
         style={styles.imgAvatar}
       />
       </View>
-      <View >
-        <Button
-          // onPress={this.buttonClickListener}
-          title="change Photo"
-          color="#d9dbd3"
-        />
+      <View style={{justifyContent:'center',alignItems:'center'}}>
+        <TouchableOpacity style={{alignItems:'center',padding:10, backgroundColor:'#0066ff', width:'50%', height:40, justifyContent:'center', borderRadius:20}}>
+          <Text >Change Photo</Text>
+</TouchableOpacity>
       </View>
       {/* <Text>{name}</Text>
       <Text>{face}</Text>
       <Text>{number}</Text>
       <Text>{andress}</Text> */}
       <View >
-        <Text style={{ color: 'red' }}>Họ và Tên: </Text>
+        <Text style={{ color: 'red',marginLeft:10 }}>Họ và Tên: </Text>
         <TextInput
           placeholder='Hello, please write from me!!'
           onChangeText={(name)=>setName(name)}
@@ -65,7 +64,7 @@ Alert.alert(
            />
       </View>
       <View >
-        <Text style={{ color: 'red' }}>Facebook: </Text>
+        <Text style={{ color: 'red',marginLeft:10 }}>Facebook: </Text>
         <TextInput
           placeholder='Hello, please write from me!!' 
           onChangeText={(face)=>setFace(face)}
@@ -73,7 +72,7 @@ Alert.alert(
           />
       </View>
       <View >
-        <Text style={{ color: 'red' }}>Số Điện Thoại: </Text>
+        <Text style={{ color: 'red',marginLeft:10 }}>Số Điện Thoại: </Text>
         <TextInput
           placeholder='Hello, please write from me!!'
           onChangeText={(number)=>setNumber(number)}
@@ -81,7 +80,7 @@ Alert.alert(
            />
       </View>
       <View >
-        <Text style={{ color: 'red' }}>Địa chỉ: </Text>
+        <Text style={{ color: 'red',marginLeft:10 }}>Địa chỉ: </Text>
         <TextInput
           placeholder='Hello, please write from me!!' 
         onChangeText={(dress)=>setAndress(dress)}
@@ -94,8 +93,11 @@ Alert.alert(
           title="save"
           color="#0066ff"
           onPress={twoOptionAlert}
+  
         />
+
       </View>
+
     </View>
     </SafeAreaView>
   );
@@ -107,9 +109,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#fff',
-    display: 'flex',
-    flexWrap: 'wrap',
+  
+
     // flexDirection: 'row',
+    margin: 10,
   },
 imgAvatar:{
   borderRadius:50,

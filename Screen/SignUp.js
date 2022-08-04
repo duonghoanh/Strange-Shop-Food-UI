@@ -8,12 +8,12 @@ import {
   TextInput,
   Button,
   TouchableOpacity,
-} from "react-native";;
+} from "react-native";
+
 import { useNavigation } from "@react-navigation/core";
 
-export default function Login() {
+export default function SignUp() {
   const navigation = useNavigation(); // to navigate to other screens
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -57,9 +57,8 @@ export default function Login() {
         </View>
 
         <TouchableOpacity>
-          <Text style={styles.forgot_button}>Forgot Password?</Text>
         </TouchableOpacity>
-          <Text style={{color:'chocolate'}}>Do not have an account?🙄👉🏽<Text style={{ color: "#ff0000",fontWeight:'bold'}} onPress={() => navigation.navigate("SignUp")}>SignUp</Text>👈🏽</Text>
+          <Text style={{color:'chocolate'}}>Have an account?😋👉🏽<Text style={{ color: "#ff0000",fontWeight:'bold'}} onPress={() => navigation.navigate("Login")}>Login</Text>👈🏽</Text>
         <TouchableOpacity style={styles.loginBtn}>
           <Text style={styles.loginText}>LOGIN</Text>
         </TouchableOpacity>

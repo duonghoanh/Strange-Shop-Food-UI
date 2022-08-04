@@ -4,26 +4,32 @@ import {
     Image, ScrollView,
     StyleSheet, Text,
     TouchableOpacity, View,
-    SafeAreaView, Dimensions
+    SafeAreaView, Dimensions,
+    Modal, TextInput,Alert
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Entypo';
-import { Header } from 'react-native-elements';
-import ImgX from '../assets/img4k.png';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer, DrawerActions } from '@react-navigation/native';
+import Spaghetti from '../components/Spaghetti';
+import ChickenThighs from '../components/ChickenThighs';
+// import ChickenWings from '../components/chickenWings';
+import Humburger from '../components/Humburger';
+import Cake from '../components/Cake';
+import Pizza from '../components/Pizza';
+import ChickenWings from '../components/ChickenWings';
 
 const openDrawer = createDrawerNavigator();
 const images = [
     'https://cdn.vietnambiz.vn/2020/3/23/food-safety-1584933347508274273527.jpg',
-    'https://kenhthoitiet.vn/wp-content/uploads/2020/02/rau-xanh-tang-gia-14.2.jpg',
-    'https://research.co.zw/wp-content/uploads/2021/07/1561589281326.jpg',
+    'https://cdn.vietnambiz.vn/2020/3/23/food-safety-1584933347508274273527.jpg',
+    'https://cdn.vietnambiz.vn/2020/3/23/food-safety-1584933347508274273527.jpg',
 ]
-
 const WIDTH = Dimensions.get('window').width;
 const HEIGHT = Dimensions.get('window').height;
-export default function Index(navigation) {
+
+export default function Index() {
     const [imgActive, setimgActive] = useState(0);
+
     onchange = (nativeEvent) => {
         if (nativeEvent) {
             const slide = Math.ceil(nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width);
@@ -31,7 +37,6 @@ export default function Index(navigation) {
                 setimgActive(slide);
             }
         }
-
     }
     return (
         <View style={styles.container}>
@@ -57,7 +62,6 @@ export default function Index(navigation) {
                             />
                         )
                     }
-
                 </ScrollView>
                 <View style={styles.wrapDod}>
                     {
@@ -93,33 +97,23 @@ export default function Index(navigation) {
      flexDirection:'column',
      backgroundColor:'#e8fcff',}}>
      <ScrollView >
-             <TouchableOpacity>
-            <Image  source={require('../assets/SandWich.png')}
-              style={styles.imgItemFoot}  />
+        <TouchableOpacity >
+              <Spaghetti/>
+        </TouchableOpacity>
+        <TouchableOpacity >
+              <Cake/>
+        </TouchableOpacity>
+        <TouchableOpacity >
+              <ChickenThighs/>
+        </TouchableOpacity>
+        <TouchableOpacity >
+              <Humburger/>
+        </TouchableOpacity>
+        <TouchableOpacity >
+              <Pizza/>
         </TouchableOpacity>
         <TouchableOpacity>
-            <Image  source={require('../assets/spaghetti.png')}
-              style={styles.imgItemFoot}  />
-        </TouchableOpacity>
-        <TouchableOpacity>
-            <Image  source={require('../assets/ChickenWings.png')}
-              style={styles.imgItemFoot}  />
-        </TouchableOpacity>
-        <TouchableOpacity>
-            <Image  source={require('../assets/cake.png')}
-              style={styles.imgItemFoot}  />
-        </TouchableOpacity>
-        <TouchableOpacity>
-            <Image  source={require('../assets/pizza.png')}
-              style={styles.imgItemFoot}  />
-        </TouchableOpacity>
-        <TouchableOpacity>
-            <Image  source={require('../assets/hamburger.png')}
-              style={styles.imgItemFoot}  />
-        </TouchableOpacity>
-        <TouchableOpacity>
-            <Image  source={require('../assets/chickenThighs.png')}
-              style={styles.imgItemFoot}  />
+            <ChickenWings/>
         </TouchableOpacity>
         </ScrollView>
 
@@ -195,8 +189,39 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 0 },
         shadowOpacity: 0.5,
         shadowRadius:5,
-        margin:10,
- 
-      
-    }
-});
+        margin:10, 
+    },
+    itemFoot:{
+        width:'100%',
+        height:200,
+        shadowColor: 'blue',
+        shadowRadius: 10,
+        shadowOffset: { width: 0, height: 0 },
+        shadowOpacity: 0.5,
+        shadowRadius:5,
+        margin:10, 
+    },
+    modalText: {
+        marginBottom: 15,
+        textAlign: "center"
+      },
+      centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22
+      },
+      modalView: {
+        margin: 20,
+        backgroundColor: "white",
+        borderRadius: 20,
+        padding: 35,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2
+        },
+}
+}
+);

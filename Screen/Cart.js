@@ -7,7 +7,7 @@ import { Image, ScrollView,
 
 
 export default function Cart() {
-const [Item, setItem] = useState(0)
+const [item, setItem] = useState(0)
 
 const  buyItem = ()=>{
   Alert.alert(
